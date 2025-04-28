@@ -1,7 +1,7 @@
 const mongoclient = require('mongodb').MongoClient;
 
 async function connecttodb() {
-    const client = await mongoclient.connect("mongodb://localhost:27017/sampledb")
+    const client = await mongoclient.connect(process.env.URL)
     return client;
 }
 

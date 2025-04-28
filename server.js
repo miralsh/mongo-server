@@ -1,5 +1,6 @@
 const express=require('express')
 const cors=require('cors')
+const dotenv = require('dotenv').config()
 const app = express()
 const productRoutes = require('./products.js')
 app.use(cors({
@@ -7,7 +8,7 @@ app.use(cors({
 }))
 app.use(express.json())
 app.use("/products",productRoutes)
-const port = process.env.PORT||3000
+const port = Number(process.env.PORT)||3000
 app.listen(port,()=>{
     console.log(`app is listening on port ${port}`)
 })
